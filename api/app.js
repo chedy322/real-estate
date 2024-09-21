@@ -1,11 +1,11 @@
 const express=require('express')
 const app=express()
 const cookie=require('cookie-parser')
+require('dotenv').config()
 const port=process.env.port||3200
 const connect=require('./db/connect')
 const cors=require('cors')
 const path = require('node:path');
-
 
 //
 app.use(express.json())
@@ -35,7 +35,7 @@ app.use('/message',require('./route/message'))
 
 const start=async ()=>{
     try{
-        await connect("mongodb+srv://Taskmanager:chedy12345@chedy.bmutqsh.mongodb.net/?retryWrites=true&w=majority&appName=chedy")
+        await connect(process.env.URL)
         app.listen(port,()=>{
             console.log(`server is running on port ${port}`)
         }
