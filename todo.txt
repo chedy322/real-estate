@@ -1,0 +1,3 @@
+add the number of messages in the profile
+add delete button for posts by the owner
+have a look for the messages and see if it needs to be fixed
